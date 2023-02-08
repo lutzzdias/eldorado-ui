@@ -14,9 +14,8 @@ class CustomDrawer extends StatelessWidget {
         backgroundColor: CustomColors.lightYellow,
         child: Stack(
           children: [
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: LogoBackground(),
+            const LogoBackground(
+              alignment: Alignment.centerRight,
             ),
             Container(
               decoration: BoxDecoration(
@@ -36,21 +35,25 @@ class CustomDrawer extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-                  const DrawerTile(
+                  DrawerTile(
                     title: 'Tela Inicial',
                     icon: Icons.home,
+                    onPressed: () {},
                   ),
-                  const DrawerTile(
+                  DrawerTile(
                     title: 'Gestão da APR',
                     icon: Icons.upload_file,
+                    onPressed: () {},
                   ),
-                  const DrawerTile(
+                  DrawerTile(
                     title: 'Gestão da PT',
                     icon: Icons.upload_file,
+                    onPressed: () {},
                   ),
-                  const DrawerTile(
+                  DrawerTile(
                     title: 'Dados do Usuário',
                     icon: Icons.person_rounded,
+                    onPressed: () {},
                   ),
                   const Spacer(),
                   Divider(

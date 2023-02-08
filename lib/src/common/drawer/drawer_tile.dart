@@ -5,11 +5,13 @@ import 'package:flutter/material.dart';
 class DrawerTile extends StatelessWidget {
   final String title;
   final IconData icon;
+  final Function()? onPressed;
 
   const DrawerTile({
     super.key,
     required this.title,
     required this.icon,
+    required this.onPressed,
   });
 
   @override
@@ -17,7 +19,7 @@ class DrawerTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: Sizes.p8),
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: OutlinedButton.styleFrom(
           side: const BorderSide(
             width: 1.5,
