@@ -1,5 +1,5 @@
 import 'package:eldorado/src/common/rounded_container.dart';
-import 'package:eldorado/src/common/custom_drawer.dart';
+import 'package:eldorado/src/common/drawer/custom_drawer.dart';
 import 'package:eldorado/src/common/logo_background.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +19,9 @@ class HomeScreen extends StatelessWidget {
             RoundedContainer(
               width: MediaQuery.of(context).size.width + 250,
             ),
-            const LogoBackground(),
+            const LogoBackground(
+              color: Colors.black12,
+            ),
             Positioned(
               left: 10,
               top: 10,
