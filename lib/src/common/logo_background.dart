@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LogoBackground extends StatelessWidget {
-  final Color color;
+  final Color? color;
   const LogoBackground({
     super.key,
-    this.color = Colors.black12,
+    this.color,
   });
 
   @override
@@ -16,10 +16,12 @@ class LogoBackground extends StatelessWidget {
       child: SvgPicture.asset(
         'assets/logo_e.svg',
         fit: BoxFit.cover,
-        colorFilter: ColorFilter.mode(
-          color,
-          BlendMode.srcOut,
-        ),
+        colorFilter: color != null
+            ? ColorFilter.mode(
+                color!,
+                BlendMode.srcOut,
+              )
+            : null,
       ),
     );
   }
