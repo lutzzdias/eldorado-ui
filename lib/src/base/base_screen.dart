@@ -1,12 +1,13 @@
+
 import 'package:eldorado/src/common/rounded_container.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
 import 'package:eldorado/src/common/logo_background.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class BaseScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
-  HomeScreen({super.key});
+  BaseScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
