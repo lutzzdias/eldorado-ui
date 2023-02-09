@@ -31,9 +31,15 @@ class FilterButton extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Text(text),
+          Text(
+            text,
+            style: const TextStyle(color: Colors.black26, fontSize: 15),
+          ),
           gapW4,
-          Icon(icon),
+          Icon(
+            icon,
+            color: Colors.black26,
+          ),
         ],
       ),
     );

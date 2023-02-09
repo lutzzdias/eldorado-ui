@@ -88,11 +88,13 @@ class CompaniesListView extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const RotatedBox(
+                        RotatedBox(
                           quarterTurns: 2,
                           child: Icon(
                             Icons.info_outline,
-                            color: Colors.red,
+                            color: index % 2 == 0
+                                ? Colors.transparent
+                                : Colors.red,
                           ),
                         ),
                         const Icon(
