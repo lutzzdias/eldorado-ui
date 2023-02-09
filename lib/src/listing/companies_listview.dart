@@ -46,7 +46,7 @@ class CompaniesListView extends StatelessWidget {
                     horizontal: Sizes.p4,
                   ),
                   child: InkWell(
-                    onTap: () => print('hello from tile $index'),
+                    onTap: () => debugPrint('hello from tile $index'),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [

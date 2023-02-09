@@ -1,10 +1,10 @@
 import 'package:eldorado/src/base/base_screen.dart';
+import 'package:eldorado/src/common/add_button.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
 import 'package:eldorado/src/common/filter_button.dart';
 import 'package:eldorado/src/common/screen_header.dart';
 import 'package:eldorado/src/common/search_field.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
-import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:eldorado/src/listing/companies_listview.dart';
 import 'package:flutter/material.dart';
 
@@ -58,25 +58,10 @@ class ListingScreen extends StatelessWidget {
                 gapH12,
                 const CompaniesListView(),
                 gapH12,
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.add,
-                  ),
-                  label: const Text('Adicionar APR'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: CustomColors.darkGreen,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.all(Sizes.p12),
-                    elevation: 10,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    textStyle: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
+                AddButton(
+                  title: 'Adicionar APR',
+                  icon: Icons.add,
+                  onPressed: () => debugPrint('APR adicionada'),
                 ),
               ],
             ),
