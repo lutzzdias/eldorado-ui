@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 
 class BaseScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final Function()? openDrawer;
 
-  BaseScreen({super.key});
+  BaseScreen({super.key, this.openDrawer});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,8 @@ class BaseScreen extends StatelessWidget {
                 icon: const Icon(Icons.menu_rounded),
                 color: CustomColors.yellow,
                 iconSize: 40,
-                onPressed: () => scaffoldKey.currentState!.openDrawer(),
+                onPressed:
+                    openDrawer ?? () => scaffoldKey.currentState!.openDrawer(),
               ),
             ),
           ],
