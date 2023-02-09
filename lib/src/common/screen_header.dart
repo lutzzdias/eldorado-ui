@@ -1,8 +1,9 @@
+
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
-class ScreenTitle extends StatelessWidget {
+class ScreenHeader extends StatelessWidget {
   final String title;
   final Color backgroundColor;
   final Color textColor;
@@ -10,7 +11,7 @@ class ScreenTitle extends StatelessWidget {
   final double fontSize;
   final double borderRadius;
 
-  const ScreenTitle({
+  const ScreenHeader({
     super.key,
     required this.title,
     this.backgroundColor = CustomColors.yellow,
