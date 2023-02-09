@@ -1,6 +1,7 @@
 import 'package:eldorado/src/base/base_screen.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
 import 'package:eldorado/src/common/screen_header.dart';
+import 'package:eldorado/src/common/search_field.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:eldorado/src/listing/companies_listview.dart';
@@ -34,24 +35,9 @@ class ListingScreen extends StatelessWidget {
                 gapH12,
                 Row(
                   children: [
-                    Expanded(
-                      child: SizedBox(
-                        height: 35,
-                        child: TextField(
-                          textAlign: TextAlign.start,
-                          textAlignVertical: TextAlignVertical.bottom,
-                          decoration: InputDecoration(
-                            hintText: 'Buscar APR',
-                            hintStyle: const TextStyle(color: Colors.black26),
-                            suffixIcon: const Icon(Icons.search),
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(30),
-                              borderSide: const BorderSide(
-                                style: BorderStyle.solid,
-                              ),
-                            ),
-                          ),
-                        ),
+                    const Expanded(
+                      child: SearchField(
+                        hintText: 'Buscar APR',
                       ),
                     ),
                     gapW12,
