@@ -1,6 +1,6 @@
 import 'package:eldorado/src/base/base_screen.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
-import 'package:eldorado/src/common/screen_title.dart';
+import 'package:eldorado/src/common/screen_header.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:eldorado/src/listing/companies_listview.dart';
@@ -30,7 +30,7 @@ class ListingScreen extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const ScreenTitle(title: 'Lista de APR\'s'),
+                const ScreenHeader(title: 'Lista de APR\'s'),
                 gapH12,
                 Row(
                   children: [
