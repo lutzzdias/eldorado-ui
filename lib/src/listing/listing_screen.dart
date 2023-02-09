@@ -1,5 +1,6 @@
 import 'package:eldorado/src/base/base_screen.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
+import 'package:eldorado/src/common/filter_button.dart';
 import 'package:eldorado/src/common/screen_header.dart';
 import 'package:eldorado/src/common/search_field.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
@@ -41,29 +42,22 @@ class ListingScreen extends StatelessWidget {
                       ),
                     ),
                     gapW12,
-                    OutlinedButton(
-                      onPressed: () {},
-                      style: OutlinedButton.styleFrom(
-                        foregroundColor: Colors.black38,
-                        side: const BorderSide(
-                          color: Colors.black38,
-                          width: 1,
+                    FilterButton(
+                      text: 'Filtros',
+                      icon: Icons.menu,
+                      onPressed: () => showDialog(
+                        context: context,
+                        builder: (_) => const AlertDialog(
+                          title: Text('Modal Title'),
+                          content: Text('Modal content'),
                         ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                      ),
-                      child: Row(
-                        children: const [
-                          Text('Filtros'),
-                          gapW4,
-                          Icon(Icons.list),
-                        ],
                       ),
                     ),
                   ],
                 ),
+                gapH12,
                 const CompaniesListView(),
+                gapH12,
                 ElevatedButton.icon(
                   onPressed: () {},
                   icon: const Icon(
