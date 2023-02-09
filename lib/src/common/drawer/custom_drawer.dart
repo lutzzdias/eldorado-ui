@@ -10,69 +10,71 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-        backgroundColor: CustomColors.lightYellow,
-        child: Stack(
-          children: [
-            const LogoBackground(
-              alignment: Alignment.centerRight,
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: CustomColors.lightYellow.withAlpha(200),
+    return SafeArea(
+      child: Drawer(
+          backgroundColor: CustomColors.lightYellow,
+          child: Stack(
+            children: [
+              const LogoBackground(
+                alignment: Alignment.centerRight,
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: Sizes.p12,
-                vertical: Sizes.p20,
+              Container(
+                decoration: BoxDecoration(
+                  color: CustomColors.lightYellow.withAlpha(200),
+                ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    'assets/icon_and_name.svg',
-                    fit: BoxFit.cover,
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-                  DrawerTile(
-                    title: 'Tela Inicial',
-                    icon: Icons.home,
-                    onPressed: () {},
-                  ),
-                  DrawerTile(
-                    title: 'Gestão da APR',
-                    icon: Icons.upload_file,
-                    onPressed: () {},
-                  ),
-                  DrawerTile(
-                    title: 'Gestão da PT',
-                    icon: Icons.upload_file,
-                    onPressed: () {},
-                  ),
-                  DrawerTile(
-                    title: 'Dados do Usuário',
-                    icon: Icons.person_rounded,
-                    onPressed: () {},
-                  ),
-                  const Spacer(),
-                  Divider(
-                    thickness: 3,
-                    indent: MediaQuery.of(context).size.width * 0.05,
-                    endIndent: MediaQuery.of(context).size.width * 0.05,
-                  ),
-                  Text(
-                    'Eldorado PT APR Digital\n'
-                    'CIS - versão 1.0',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: CustomColors.darkGreen.withAlpha(125),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: Sizes.p12,
+                  vertical: Sizes.p20,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(
+                      'assets/icon_and_name.svg',
+                      fit: BoxFit.cover,
                     ),
-                  ),
-                ],
+                    SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+                    DrawerTile(
+                      title: 'Tela Inicial',
+                      icon: Icons.home,
+                      onPressed: () {},
+                    ),
+                    DrawerTile(
+                      title: 'Gestão da APR',
+                      icon: Icons.upload_file,
+                      onPressed: () {},
+                    ),
+                    DrawerTile(
+                      title: 'Gestão da PT',
+                      icon: Icons.upload_file,
+                      onPressed: () {},
+                    ),
+                    DrawerTile(
+                      title: 'Dados do Usuário',
+                      icon: Icons.person_rounded,
+                      onPressed: () {},
+                    ),
+                    const Spacer(),
+                    Divider(
+                      thickness: 3,
+                      indent: MediaQuery.of(context).size.width * 0.05,
+                      endIndent: MediaQuery.of(context).size.width * 0.05,
+                    ),
+                    Text(
+                      'Eldorado PT APR Digital\n'
+                      'CIS - versão 1.0',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: CustomColors.darkGreen.withAlpha(125),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ));
+            ],
+          )),
+    );
   }
 }
