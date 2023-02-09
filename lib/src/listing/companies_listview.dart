@@ -2,6 +2,7 @@ import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
+// TODO: Make this widget more reusable, define how data will be received and treated
 class CompaniesListView extends StatelessWidget {
   const CompaniesListView({
     super.key,
