@@ -1,3 +1,4 @@
+
 import 'package:eldorado/src/base/base_screen.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
 import 'package:eldorado/src/common/footer/custom_nav_bar.dart';
@@ -20,8 +21,8 @@ class TestScreen extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.catching_pokemon),
-            label: 'Jogo do bicho',
+            icon: Icon(Icons.keyboard),
+            label: 'Keyboard',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.wifi),

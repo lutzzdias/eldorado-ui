@@ -1,6 +1,6 @@
 import 'package:eldorado/src/base/base_screen.dart';
-import 'package:eldorado/src/listing/listing_screen.dart';
-import 'package:eldorado/src/test_screen/test_screen.dart';
+import 'package:eldorado/src/features/listing/listing_screen.dart';
+import 'package:eldorado/src/features/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -17,11 +17,13 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/':
-            return MaterialPageRoute(builder: (_) => const TestScreen());
+            return MaterialPageRoute(builder: (_) => const LoginScreen());
           case '/listing':
             return MaterialPageRoute(builder: (_) => ListingScreen());
           case '/base':
             return MaterialPageRoute(builder: (_) => BaseScreen());
+          case '/login':
+            return MaterialPageRoute(builder: (_) => const LoginScreen());
           default:
             return MaterialPageRoute(builder: (_) => BaseScreen());
         }

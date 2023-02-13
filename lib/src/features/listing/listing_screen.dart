@@ -5,7 +5,7 @@ import 'package:eldorado/src/common/filter_button.dart';
 import 'package:eldorado/src/common/screen_header.dart';
 import 'package:eldorado/src/common/search_field.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
-import 'package:eldorado/src/listing/companies_listview.dart';
+import 'package:eldorado/src/features/listing/companies_listview.dart';
 import 'package:flutter/material.dart';
 
 class ListingScreen extends StatelessWidget {
