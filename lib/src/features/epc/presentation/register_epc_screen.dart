@@ -54,6 +54,7 @@ class RegisterEpcScreen extends StatelessWidget {
                     gapH12,
                     HorizontalListView(
                       items: steps,
+                      currentStep: 1,
                     ),
                     gapH16,
                     Row(

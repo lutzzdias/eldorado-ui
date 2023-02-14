@@ -4,13 +4,10 @@ import 'package:flutter/material.dart';
 
 class HorizontalListView extends StatelessWidget {
   final List<String> items;
+  final int currentStep;
 
-  const HorizontalListView({
-    super.key,
-    required this.items,
-  });
-
-  // TODO: Implement selection logic and state management
+  const HorizontalListView(
+      {super.key, required this.items, required this.currentStep});
 
   @override
   Widget build(BuildContext context) {
@@ -19,21 +16,33 @@ class HorizontalListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
-        // TODO: create widget to pass as the itemBuilder and improve UI to look like prototype
         itemBuilder: (context, index) => GestureDetector(
+          onTap: index <= currentStep
+              ? () => debugPrint('click no item de índice $index')
+              : null,
           child: Container(
             alignment: Alignment.center,
             margin: const EdgeInsets.symmetric(horizontal: Sizes.p8),
             padding: const EdgeInsets.all(Sizes.p4),
             decoration: BoxDecoration(
-              border: Border.all(color: CustomColors.darkerGrey),
+              border: Border.all(
+                color: index <= currentStep
+                    ? CustomColors.darkGreen
+                    : CustomColors.darkerGrey,
+              ),
               borderRadius: BorderRadius.circular(25),
-              color: CustomColors.darkGrey,
+              color: index == currentStep
+                  ? CustomColors.lightGreen.withAlpha(30)
+                  : index < currentStep
+                      ? CustomColors.gray
+                      : CustomColors.darkGrey,
             ),
             child: Text(
               items[index],
-              style: const TextStyle(
-                color: CustomColors.darkerGrey,
+              style: TextStyle(
+                color: index <= currentStep
+                    ? CustomColors.darkGreen
+                    : CustomColors.darkerGrey,
               ),
             ),
           ),
