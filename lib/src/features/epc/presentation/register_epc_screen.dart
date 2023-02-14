@@ -34,6 +34,7 @@ class RegisterEpcScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Stack(
           children: [
             DefaultBackground(
@@ -41,82 +42,85 @@ class RegisterEpcScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  const ReturnAppBar(),
-                  gapH48,
-                  Header(
-                    title: 'EPC\'s Aplicáveis',
-                    width: MediaQuery.of(context).size.width * .85,
-                  ),
-                  gapH12,
-                  HorizontalListView(
-                    items: steps,
-                  ),
-                  gapH16,
-                  Row(
-                    children: [
-                      const Expanded(
-                        flex: 55,
-                        child: SearchField(hintText: 'Buscar EPCs'),
-                      ),
-                      gapW8,
-                      Expanded(
-                        flex: 45,
-                        child: ElevatedIconButton(
-                          title: 'Cadastrar',
-                          icon: Icons.add,
-                          backgroundColor: CustomColors.darkGreen,
-                          foregroundColor: Colors.white,
-                          onPressed: () => showDialog(
-                            context: context,
-                            builder: (_) => RegisterModal(
-                              title: 'Cadastrar EPC',
-                              onSave: () =>
-                                  debugPrint('clicked on save button'),
-                            ),
-                          ),
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const ReturnAppBar(),
+                    gapH48,
+                    Header(
+                      title: 'EPC\'s Aplicáveis',
+                      width: MediaQuery.of(context).size.width * .85,
+                    ),
+                    gapH12,
+                    HorizontalListView(
+                      items: steps,
+                    ),
+                    gapH16,
+                    Row(
+                      children: [
+                        const Expanded(
+                          flex: 55,
+                          child: SearchField(hintText: 'Buscar EPCs'),
                         ),
-                      ),
-                    ],
-                  ),
-                  gapH16,
-                  MultipleSelectionListView(items: epcs),
-                  gapH16,
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Expanded(
-                        flex: 45,
-                        child: ElevatedButton(
-                          onPressed: () =>
-                              debugPrint('clicked on return button'),
-                          style: ElevatedButton.styleFrom(
+                        gapW8,
+                        Expanded(
+                          flex: 45,
+                          child: ElevatedIconButton(
+                            title: 'Cadastrar',
+                            icon: Icons.add,
                             backgroundColor: CustomColors.darkGreen,
-                          ),
-                          child: const Text('Voltar'),
-                        ),
-                      ),
-                      const Spacer(
-                        flex: 10,
-                      ),
-                      Expanded(
-                        flex: 45,
-                        child: ElevatedButton(
-                          onPressed: () => debugPrint('clicked on next button'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: CustomColors.yellow,
-                            foregroundColor: CustomColors.darkGreen,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                            foregroundColor: Colors.white,
+                            onPressed: () => showDialog(
+                              context: context,
+                              builder: (_) => RegisterModal(
+                                title: 'Cadastrar EPC',
+                                onSave: () =>
+                                    debugPrint('clicked on save button'),
+                              ),
                             ),
                           ),
-                          child: const Text('Próximo'),
                         ),
-                      ),
-                    ],
-                  )
-                ],
+                      ],
+                    ),
+                    gapH16,
+                    MultipleSelectionListView(items: epcs),
+                    gapH16,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(
+                          flex: 45,
+                          child: ElevatedButton(
+                            onPressed: () =>
+                                debugPrint('clicked on return button'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: CustomColors.darkGreen,
+                            ),
+                            child: const Text('Voltar'),
+                          ),
+                        ),
+                        const Spacer(
+                          flex: 10,
+                        ),
+                        Expanded(
+                          flex: 45,
+                          child: ElevatedButton(
+                            onPressed: () =>
+                                debugPrint('clicked on next button'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: CustomColors.yellow,
+                              foregroundColor: CustomColors.darkGreen,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: const Text('Próximo'),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             )
           ],
