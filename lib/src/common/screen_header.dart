@@ -7,6 +7,7 @@ class ScreenHeader extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
   final double height;
+  final double width;
   final double fontSize;
   final double borderRadius;
 
@@ -16,6 +17,7 @@ class ScreenHeader extends StatelessWidget {
     this.backgroundColor = CustomColors.yellow,
     this.textColor = CustomColors.darkGreen,
     this.height = 50,
+    this.width = 300,
     this.fontSize = 20,
     this.borderRadius = 5,
   });
@@ -27,6 +29,7 @@ class ScreenHeader extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
         color: backgroundColor,
       ),
+      width: width,
       height: height,
       alignment: Alignment.centerLeft,
       padding: const EdgeInsets.only(left: Sizes.p16),

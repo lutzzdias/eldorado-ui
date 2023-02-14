@@ -7,8 +7,13 @@ import 'package:flutter/material.dart';
 class Base extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final Function()? openDrawer;
+  final bool hasDrawer;
 
-  Base({super.key, this.openDrawer});
+  Base({
+    super.key,
+    this.openDrawer,
+    this.hasDrawer = true,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +29,18 @@ class Base extends StatelessWidget {
             const LogoBackground(
               color: Colors.black12,
             ),
-            Positioned(
-              left: 10,
-              top: 10,
-              child: IconButton(
-                icon: const Icon(Icons.menu_rounded),
-                color: CustomColors.yellow,
-                iconSize: 40,
-                onPressed:
-                    openDrawer ?? () => scaffoldKey.currentState!.openDrawer(),
+            if (hasDrawer)
+              Positioned(
+                left: 10,
+                top: 10,
+                child: IconButton(
+                  icon: const Icon(Icons.menu_rounded),
+                  color: CustomColors.yellow,
+                  iconSize: 40,
+                  onPressed: openDrawer ??
+                      () => scaffoldKey.currentState!.openDrawer(),
+                ),
               ),
-            ),
           ],
         ),
       ),
