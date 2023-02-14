@@ -1,4 +1,5 @@
 import 'package:eldorado/src/constants/app_sizes.dart';
+import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalListView extends StatelessWidget {
@@ -19,16 +20,23 @@ class HorizontalListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
         // TODO: create widget to pass as the itemBuilder and improve UI to look like prototype
-        itemBuilder: (context, index) => Container(
-          alignment: Alignment.center,
-          margin: const EdgeInsets.symmetric(horizontal: Sizes.p8),
-          padding: const EdgeInsets.all(Sizes.p4),
-          decoration: BoxDecoration(
-            border: Border.all(),
-            borderRadius: BorderRadius.circular(25),
-            color: Colors.black26,
+        itemBuilder: (context, index) => GestureDetector(
+          child: Container(
+            alignment: Alignment.center,
+            margin: const EdgeInsets.symmetric(horizontal: Sizes.p8),
+            padding: const EdgeInsets.all(Sizes.p4),
+            decoration: BoxDecoration(
+              border: Border.all(color: CustomColors.darkerGrey),
+              borderRadius: BorderRadius.circular(25),
+              color: CustomColors.darkGrey,
+            ),
+            child: Text(
+              items[index],
+              style: const TextStyle(
+                color: CustomColors.darkerGrey,
+              ),
+            ),
           ),
-          child: Text(items[index]),
         ),
       ),
     );
