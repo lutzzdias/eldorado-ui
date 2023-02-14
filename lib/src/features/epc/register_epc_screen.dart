@@ -99,8 +99,67 @@ class RegisterEpcScreen extends StatelessWidget {
                             icon: Icons.add,
                             backgroundColor: CustomColors.darkGreen,
                             foregroundColor: Colors.white,
-                            onPressed: () =>
-                                debugPrint('Clicked on register button'),
+                            onPressed: () => showDialog(
+                              context: context,
+                              builder: (_) => AlertDialog(
+                                contentPadding: const EdgeInsets.fromLTRB(
+                                  Sizes.p12,
+                                  Sizes.p20,
+                                  Sizes.p12,
+                                  Sizes.p4,
+                                ),
+                                backgroundColor: CustomColors.gray,
+                                title: const Text(
+                                  'Cadastrar EPC',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: CustomColors.darkGreen,
+                                  ),
+                                ),
+                                content: SizedBox(
+                                  height: 40,
+                                  child: TextFormField(
+                                    textAlignVertical: TextAlignVertical.bottom,
+                                    decoration: InputDecoration(
+                                      hintText: 'Nome',
+                                      hintStyle: const TextStyle(
+                                        color: Colors.black54,
+                                      ),
+                                      filled: true,
+                                      fillColor: Colors.white,
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                        borderSide: const BorderSide(
+                                          width: 0,
+                                          style: BorderStyle.none,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                actionsAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                actions: [
+                                  ElevatedButton(
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: CustomColors.darkGreen,
+                                    ),
+                                    child: const Text('Voltar'),
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () =>
+                                        debugPrint('clicked on save button'),
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: CustomColors.yellow,
+                                      foregroundColor: CustomColors.darkGreen,
+                                    ),
+                                    child: const Text('Salvar'),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -148,7 +207,8 @@ class RegisterEpcScreen extends StatelessWidget {
                       Expanded(
                         flex: 45,
                         child: ElevatedButton(
-                          onPressed: () => {},
+                          onPressed: () =>
+                              debugPrint('clicked on return button'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: CustomColors.darkGreen,
                           ),
@@ -161,7 +221,7 @@ class RegisterEpcScreen extends StatelessWidget {
                       Expanded(
                         flex: 45,
                         child: ElevatedButton(
-                          onPressed: () => {},
+                          onPressed: () => debugPrint('clicked on next button'),
                           style: ElevatedButton.styleFrom(
                             backgroundColor: CustomColors.yellow,
                             foregroundColor: CustomColors.darkGreen,
