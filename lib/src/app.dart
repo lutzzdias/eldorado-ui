@@ -1,5 +1,5 @@
 import 'package:eldorado/src/common/base.dart';
-import 'package:eldorado/src/features/epc/register/register_epc_screen.dart';
+import 'package:eldorado/src/features/epc/register_epc_screen.dart';
 import 'package:eldorado/src/features/listing/listing_screen.dart';
 import 'package:eldorado/src/features/login/login_screen.dart';
 import 'package:flutter/material.dart';
