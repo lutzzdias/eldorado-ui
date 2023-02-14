@@ -1,8 +1,9 @@
+
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
-class ScreenHeader extends StatelessWidget {
+class Header extends StatelessWidget {
   final String title;
   final Color backgroundColor;
   final Color textColor;
@@ -11,7 +12,7 @@ class ScreenHeader extends StatelessWidget {
   final double fontSize;
   final double borderRadius;
 
-  const ScreenHeader({
+  const Header({
     super.key,
     required this.title,
     this.backgroundColor = CustomColors.yellow,

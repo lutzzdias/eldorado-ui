@@ -3,7 +3,7 @@ import 'package:eldorado/src/common/default_background.dart';
 import 'package:eldorado/src/common/multiple_selection_list_view.dart';
 import 'package:eldorado/src/common/register_modal.dart';
 import 'package:eldorado/src/common/return_app_bar.dart';
-import 'package:eldorado/src/common/screen_header.dart';
+import 'package:eldorado/src/common/header.dart';
 import 'package:eldorado/src/common/search_field.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
@@ -44,7 +44,7 @@ class RegisterEpcScreen extends StatelessWidget {
                 children: [
                   const ReturnAppBar(),
                   gapH48,
-                  ScreenHeader(
+                  Header(
                     title: 'EPC\'s Aplicáveis',
                     width: MediaQuery.of(context).size.width * .85,
                   ),
