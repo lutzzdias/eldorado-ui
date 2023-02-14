@@ -41,7 +41,7 @@ class RegisterEpcScreen extends StatelessWidget {
               hasDrawer: false,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(horizontal: Sizes.p20),
               child: SingleChildScrollView(
                 child: Column(
                   children: [

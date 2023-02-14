@@ -6,8 +6,11 @@ class HorizontalListView extends StatelessWidget {
   final List<String> items;
   final int currentStep;
 
-  const HorizontalListView(
-      {super.key, required this.items, required this.currentStep});
+  const HorizontalListView({
+    super.key,
+    required this.items,
+    required this.currentStep,
+  });
 
   @override
   Widget build(BuildContext context) {
