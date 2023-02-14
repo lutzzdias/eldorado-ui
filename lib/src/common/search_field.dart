@@ -18,6 +18,8 @@ class SearchField extends StatelessWidget {
     this.borderRadius = 30,
   });
 
+  // TODO: Implement search function / logic
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(

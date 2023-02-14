@@ -9,6 +9,8 @@ class HorizontalListView extends StatelessWidget {
     required this.items,
   });
 
+  // TODO: Implement selection logic and state management
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,7 +18,7 @@ class HorizontalListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: items.length,
-        // TODO: create widget to pass as the itemBuilder
+        // TODO: create widget to pass as the itemBuilder and improve UI to look like prototype
         itemBuilder: (context, index) => Container(
           alignment: Alignment.center,
           margin: const EdgeInsets.symmetric(horizontal: Sizes.p8),

@@ -49,8 +49,6 @@ class RegisterEpcScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * .85,
                   ),
                   gapH12,
-                  // TODO: Improve UI of horizontalListView
-                  // TODO: Implement selection logic and state management
                   HorizontalListView(
                     items: steps,
                   ),
