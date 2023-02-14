@@ -1,4 +1,4 @@
-import 'package:eldorado/src/common/base.dart';
+import 'package:eldorado/src/common/default_background.dart';
 import 'package:eldorado/src/features/epc/register_epc_screen.dart';
 import 'package:eldorado/src/features/listing/listing_screen.dart';
 import 'package:eldorado/src/features/login/login_screen.dart';
@@ -22,13 +22,13 @@ class MyApp extends StatelessWidget {
           case '/listing':
             return MaterialPageRoute(builder: (_) => ListingScreen());
           case '/base':
-            return MaterialPageRoute(builder: (_) => Base());
+            return MaterialPageRoute(builder: (_) => DefaultBackground());
           case '/register_epc':
             return MaterialPageRoute(builder: (_) => RegisterEpcScreen());
           case '/login':
             return MaterialPageRoute(builder: (_) => const LoginScreen());
           default:
-            return MaterialPageRoute(builder: (_) => Base());
+            return MaterialPageRoute(builder: (_) => DefaultBackground());
         }
       },
     );

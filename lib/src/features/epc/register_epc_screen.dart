@@ -1,5 +1,5 @@
 import 'package:eldorado/src/common/elevated_icon_button.dart';
-import 'package:eldorado/src/common/base.dart';
+import 'package:eldorado/src/common/default_background.dart';
 import 'package:eldorado/src/common/multiple_selection_list_view.dart';
 import 'package:eldorado/src/common/register_modal.dart';
 import 'package:eldorado/src/common/return_app_bar.dart';
@@ -35,7 +35,7 @@ class RegisterEpcScreen extends StatelessWidget {
       child: Scaffold(
         body: Stack(
           children: [
-            Base(
+            DefaultBackground(
               hasDrawer: false,
             ),
             Padding(

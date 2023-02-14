@@ -1,6 +1,6 @@
-import 'package:eldorado/src/common/base.dart';
+import 'package:eldorado/src/common/default_background.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
-import 'package:eldorado/src/common/footer/custom_nav_bar.dart';
+import 'package:eldorado/src/common/custom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class TestScreen extends StatelessWidget {
@@ -11,7 +11,7 @@ class TestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Base(),
+      body: DefaultBackground(),
       drawer: const CustomDrawer(),
       bottomNavigationBar: const CustomNavBar(
         items: [
