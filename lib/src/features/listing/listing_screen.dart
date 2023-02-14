@@ -1,4 +1,4 @@
-import 'package:eldorado/src/base/base_screen.dart';
+import 'package:eldorado/src/base/base.dart';
 import 'package:eldorado/src/common/add_button.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
 import 'package:eldorado/src/common/filter_button.dart';
@@ -19,7 +19,7 @@ class ListingScreen extends StatelessWidget {
       drawer: const CustomDrawer(),
       body: Stack(
         children: [
-          BaseScreen(
+          Base(
             openDrawer: () {
               scaffoldKey.currentState!.openDrawer();
             },

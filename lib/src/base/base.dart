@@ -4,11 +4,11 @@ import 'package:eldorado/src/common/logo_background.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
-class BaseScreen extends StatelessWidget {
+class Base extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final Function()? openDrawer;
 
-  BaseScreen({super.key, this.openDrawer});
+  Base({super.key, this.openDrawer});
 
   @override
   Widget build(BuildContext context) {

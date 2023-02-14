@@ -1,4 +1,4 @@
-import 'package:eldorado/src/base/base_screen.dart';
+import 'package:eldorado/src/base/base.dart';
 import 'package:eldorado/src/features/listing/listing_screen.dart';
 import 'package:eldorado/src/features/login/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
           case '/listing':
             return MaterialPageRoute(builder: (_) => ListingScreen());
           case '/base':
-            return MaterialPageRoute(builder: (_) => BaseScreen());
+            return MaterialPageRoute(builder: (_) => Base());
           case '/login':
             return MaterialPageRoute(builder: (_) => const LoginScreen());
           default:
-            return MaterialPageRoute(builder: (_) => BaseScreen());
+            return MaterialPageRoute(builder: (_) => Base());
         }
       },
     );
