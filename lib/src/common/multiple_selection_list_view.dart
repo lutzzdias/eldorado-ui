@@ -20,6 +20,21 @@ class MultipleSelectionListView extends StatefulWidget {
 
 class _MultipleSelectionListViewState extends State<MultipleSelectionListView> {
   List<ListOption> selected = [];
+
+  void _toggleItemSelection(int index) {
+    if (selected.any(
+      (element) => element.id == widget.items[index].id,
+    )) {
+      setState(() {
+        selected.removeWhere((element) => element.id == widget.items[index].id);
+      });
+    } else {
+      setState(() {
+        selected.add(widget.items[index]);
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -27,20 +42,7 @@ class _MultipleSelectionListViewState extends State<MultipleSelectionListView> {
       child: ListView.builder(
         itemCount: widget.items.length,
         itemBuilder: (context, index) => GestureDetector(
-          onTap: () {
-            if (selected.any(
-              (element) => element.id == widget.items[index].id,
-            )) {
-              setState(() {
-                selected.removeWhere(
-                    (element) => element.id == widget.items[index].id);
-              });
-            } else {
-              setState(() {
-                selected.add(widget.items[index]);
-              });
-            }
-          },
+          onTap: () => _toggleItemSelection(index),
           child: SizedBox(
             height: 60,
             child: Card(
