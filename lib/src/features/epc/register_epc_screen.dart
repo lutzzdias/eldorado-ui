@@ -1,9 +1,13 @@
-import 'package:eldorado/src/common/add_button.dart';
+import 'package:eldorado/src/common/elevated_icon_button.dart';
 import 'package:eldorado/src/common/base.dart';
+import 'package:eldorado/src/common/multiple_selection_list_view.dart';
+import 'package:eldorado/src/common/register_modal.dart';
+import 'package:eldorado/src/common/return_app_bar.dart';
 import 'package:eldorado/src/common/screen_header.dart';
 import 'package:eldorado/src/common/search_field.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
+import 'package:eldorado/src/features/epc/horizontal_list_view.dart';
 import 'package:flutter/material.dart';
 
 class RegisterEpcScreen extends StatelessWidget {
@@ -38,52 +42,19 @@ class RegisterEpcScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      IconButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        icon: const Icon(Icons.arrow_back),
-                        color: CustomColors.yellow,
-                        iconSize: 30,
-                      ),
-                      IconButton(
-                        onPressed: () =>
-                            debugPrint('clicked on the three dots'),
-                        icon: const Icon(Icons.more_vert),
-                        color: CustomColors.yellow,
-                        iconSize: 30,
-                      ),
-                    ],
-                  ),
+                  const ReturnAppBar(),
                   gapH48,
                   ScreenHeader(
                     title: 'EPC\'s Aplicáveis',
                     width: MediaQuery.of(context).size.width * .85,
                   ),
                   gapH12,
-                  SizedBox(
-                    height: 30,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: steps.length,
-                      itemBuilder: (context, index) => Container(
-                        alignment: Alignment.center,
-                        margin:
-                            const EdgeInsets.symmetric(horizontal: Sizes.p4),
-                        padding: const EdgeInsets.all(Sizes.p4),
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(25),
-                          color: Colors.black26,
-                        ),
-                        child: Text(steps[index]),
-                      ),
-                    ),
+                  HorizontalListView(
+                    items: steps,
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: Sizes.p12,
+                      vertical: Sizes.p16,
                     ),
                     child: Row(
                       children: [
@@ -94,70 +65,17 @@ class RegisterEpcScreen extends StatelessWidget {
                         gapW8,
                         Expanded(
                           flex: 45,
-                          child: AddButton(
+                          child: ElevatedIconButton(
                             title: 'Cadastrar',
                             icon: Icons.add,
                             backgroundColor: CustomColors.darkGreen,
                             foregroundColor: Colors.white,
                             onPressed: () => showDialog(
                               context: context,
-                              builder: (_) => AlertDialog(
-                                contentPadding: const EdgeInsets.fromLTRB(
-                                  Sizes.p12,
-                                  Sizes.p20,
-                                  Sizes.p12,
-                                  Sizes.p4,
-                                ),
-                                backgroundColor: CustomColors.gray,
-                                title: const Text(
-                                  'Cadastrar EPC',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color: CustomColors.darkGreen,
-                                  ),
-                                ),
-                                content: SizedBox(
-                                  height: 40,
-                                  child: TextFormField(
-                                    textAlignVertical: TextAlignVertical.bottom,
-                                    decoration: InputDecoration(
-                                      hintText: 'Nome',
-                                      hintStyle: const TextStyle(
-                                        color: Colors.black54,
-                                      ),
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                        borderSide: const BorderSide(
-                                          width: 0,
-                                          style: BorderStyle.none,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                actionsAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                actions: [
-                                  ElevatedButton(
-                                    onPressed: () =>
-                                        Navigator.of(context).pop(),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: CustomColors.darkGreen,
-                                    ),
-                                    child: const Text('Voltar'),
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () =>
-                                        debugPrint('clicked on save button'),
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: CustomColors.yellow,
-                                      foregroundColor: CustomColors.darkGreen,
-                                    ),
-                                    child: const Text('Salvar'),
-                                  ),
-                                ],
+                              builder: (_) => RegisterModal(
+                                title: 'Cadastrar EPC',
+                                onSave: () =>
+                                    debugPrint('clicked on save button'),
                               ),
                             ),
                           ),
@@ -165,42 +83,8 @@ class RegisterEpcScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: epcs.length,
-                      itemBuilder: (context, index) => SizedBox(
-                        height: 60,
-                        child: Card(
-                          child: Row(
-                            children: [
-                              const Expanded(
-                                flex: 15,
-                                child: Icon(Icons.check),
-                              ),
-                              const VerticalDivider(
-                                color: Colors.black12,
-                                thickness: 2,
-                              ),
-                              Expanded(
-                                flex: 85,
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: Sizes.p12),
-                                  child: Text(
-                                    epcs[index],
-                                    style: const TextStyle(
-                                      color: Colors.black54,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  MultipleSelectionListView(items: epcs),
+                  gapH16,
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [

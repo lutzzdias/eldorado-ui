@@ -1,5 +1,5 @@
 import 'package:eldorado/src/common/base.dart';
-import 'package:eldorado/src/common/add_button.dart';
+import 'package:eldorado/src/common/elevated_icon_button.dart';
 import 'package:eldorado/src/common/drawer/custom_drawer.dart';
 import 'package:eldorado/src/common/filter_button.dart';
 import 'package:eldorado/src/common/screen_header.dart';
@@ -58,7 +58,7 @@ class ListingScreen extends StatelessWidget {
                 gapH12,
                 const CompaniesListView(),
                 gapH12,
-                AddButton(
+                ElevatedIconButton(
                   title: 'Adicionar APR',
                   icon: Icons.add,
                   onPressed: () => debugPrint('APR adicionada'),

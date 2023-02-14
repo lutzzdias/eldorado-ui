@@ -1,8 +1,9 @@
+
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
-class AddButton extends StatelessWidget {
+class ElevatedIconButton extends StatelessWidget {
   final String title;
   final IconData icon;
   final Color backgroundColor;
@@ -11,7 +12,7 @@ class AddButton extends StatelessWidget {
   final double fontSize;
   final double height;
 
-  const AddButton({
+  const ElevatedIconButton({
     super.key,
     required this.title,
     required this.icon,
