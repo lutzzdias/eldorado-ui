@@ -7,7 +7,8 @@ import 'package:eldorado/src/common/header.dart';
 import 'package:eldorado/src/common/search_field.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
-import 'package:eldorado/src/features/epc/horizontal_list_view.dart';
+import 'package:eldorado/src/features/epc/domain/list_option.dart';
+import 'package:eldorado/src/features/epc/presentation/horizontal_list_view.dart';
 import 'package:flutter/material.dart';
 
 class RegisterEpcScreen extends StatelessWidget {
@@ -21,12 +22,12 @@ class RegisterEpcScreen extends StatelessWidget {
     'Last step',
   ];
 
-  final List<String> epcs = [
-    'Dispositivos de Bloqueio',
-    'Cone de Sinalização',
-    'Extintor',
-    'Trava Queda',
-    'Biombo',
+  final List<ListOption> epcs = [
+    const ListOption(id: '0', name: 'Dispositivos de Bloqueio'),
+    const ListOption(id: '1', name: 'Cone de Sinalização'),
+    const ListOption(id: '2', name: 'Extintor'),
+    const ListOption(id: '3', name: 'Trava Queda'),
+    const ListOption(id: '4', name: 'Biombo'),
   ];
 
   @override
