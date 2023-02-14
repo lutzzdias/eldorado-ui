@@ -49,40 +49,39 @@ class RegisterEpcScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width * .85,
                   ),
                   gapH12,
+                  // TODO: Improve UI of horizontalListView
+                  // TODO: Implement selection logic and state management
                   HorizontalListView(
                     items: steps,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: Sizes.p16,
-                    ),
-                    child: Row(
-                      children: [
-                        const Expanded(
-                          flex: 55,
-                          child: SearchField(hintText: 'Buscar EPCs'),
-                        ),
-                        gapW8,
-                        Expanded(
-                          flex: 45,
-                          child: ElevatedIconButton(
-                            title: 'Cadastrar',
-                            icon: Icons.add,
-                            backgroundColor: CustomColors.darkGreen,
-                            foregroundColor: Colors.white,
-                            onPressed: () => showDialog(
-                              context: context,
-                              builder: (_) => RegisterModal(
-                                title: 'Cadastrar EPC',
-                                onSave: () =>
-                                    debugPrint('clicked on save button'),
-                              ),
+                  gapH16,
+                  Row(
+                    children: [
+                      const Expanded(
+                        flex: 55,
+                        child: SearchField(hintText: 'Buscar EPCs'),
+                      ),
+                      gapW8,
+                      Expanded(
+                        flex: 45,
+                        child: ElevatedIconButton(
+                          title: 'Cadastrar',
+                          icon: Icons.add,
+                          backgroundColor: CustomColors.darkGreen,
+                          foregroundColor: Colors.white,
+                          onPressed: () => showDialog(
+                            context: context,
+                            builder: (_) => RegisterModal(
+                              title: 'Cadastrar EPC',
+                              onSave: () =>
+                                  debugPrint('clicked on save button'),
                             ),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
+                  gapH16,
                   MultipleSelectionListView(items: epcs),
                   gapH16,
                   Row(
