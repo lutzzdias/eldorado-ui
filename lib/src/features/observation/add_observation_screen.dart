@@ -12,8 +12,8 @@ class AddObservationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         bottomNavigationBar: const CustomNavBar(
+          current: 3,
           items: [
             BottomNavigationBarItem(
                 icon: Icon(Icons.print), label: 'Exportar PDF'),
@@ -35,8 +35,6 @@ class AddObservationScreen extends StatelessWidget {
             '/register_epc',
           ],
         ),
-
-        // TODO: Fix scroll
         body: Stack(
           children: [
             DefaultBackground(),
@@ -53,6 +51,9 @@ class AddObservationScreen extends StatelessWidget {
                     ),
                     gapH12,
                     Card(
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
                       child: Padding(
                         padding: const EdgeInsets.all(Sizes.p12),
                         child: Column(
@@ -67,7 +68,6 @@ class AddObservationScreen extends StatelessWidget {
                               ),
                             ),
                             gapH8,
-                            // TODO: Fix styling
                             TextFormField(
                               minLines: 15,
                               keyboardType: TextInputType.multiline,
@@ -90,6 +90,13 @@ class AddObservationScreen extends StatelessWidget {
                                 debugPrint('clicked on return button'),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: CustomColors.darkGreen,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              textStyle: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                             child: const Text('Voltar'),
                           ),
@@ -107,6 +114,10 @@ class AddObservationScreen extends StatelessWidget {
                               foregroundColor: CustomColors.darkGreen,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
+                              ),
+                              textStyle: const TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                             child: const Text('Salvar'),

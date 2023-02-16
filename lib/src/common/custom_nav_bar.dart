@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 class CustomNavBar extends StatelessWidget {
   final List<BottomNavigationBarItem> items;
   final List<String> screenNames;
+  final int current;
 
   const CustomNavBar({
     super.key,
     required this.items,
     required this.screenNames,
+    this.current = 0,
   });
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      currentIndex: 0,
+      currentIndex: current,
       onTap: (index) {
         switch (index) {
           case 0:

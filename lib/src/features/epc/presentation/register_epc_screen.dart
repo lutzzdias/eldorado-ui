@@ -98,6 +98,9 @@ class RegisterEpcScreen extends StatelessWidget {
                                     debugPrint('clicked on return button'),
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: CustomColors.darkGreen,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
                                 ),
                                 child: const Text('Voltar'),
                               ),
