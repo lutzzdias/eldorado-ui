@@ -2,6 +2,7 @@ import 'package:eldorado/src/common/default_background.dart';
 import 'package:eldorado/src/features/epc/presentation/register_epc_screen.dart';
 import 'package:eldorado/src/features/listing/listing_screen.dart';
 import 'package:eldorado/src/features/login/login_screen.dart';
+import 'package:eldorado/src/features/observation/add_observation_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -18,15 +19,19 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/':
-            return MaterialPageRoute(builder: (_) => RegisterEpcScreen());
-          case '/listing':
-            return MaterialPageRoute(builder: (_) => ListingScreen());
+            return MaterialPageRoute(
+                builder: (_) => const AddObservationScreen());
           case '/base':
             return MaterialPageRoute(builder: (_) => DefaultBackground());
-          case '/register_epc':
-            return MaterialPageRoute(builder: (_) => RegisterEpcScreen());
           case '/login':
             return MaterialPageRoute(builder: (_) => const LoginScreen());
+          case '/listing':
+            return MaterialPageRoute(builder: (_) => ListingScreen());
+          case '/register_epc':
+            return MaterialPageRoute(builder: (_) => RegisterEpcScreen());
+          case '/observation/add':
+            return MaterialPageRoute(
+                builder: (_) => const AddObservationScreen());
           default:
             return MaterialPageRoute(builder: (_) => DefaultBackground());
         }
