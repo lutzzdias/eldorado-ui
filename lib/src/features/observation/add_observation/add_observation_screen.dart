@@ -86,8 +86,7 @@ class AddObservationScreen extends StatelessWidget {
                         Expanded(
                           flex: 45,
                           child: ElevatedButton(
-                            onPressed: () =>
-                                debugPrint('clicked on return button'),
+                            onPressed: () => Navigator.of(context).pop(),
                             style: ElevatedButton.styleFrom(
                               backgroundColor: CustomColors.darkGreen,
                               shape: RoundedRectangleBorder(
