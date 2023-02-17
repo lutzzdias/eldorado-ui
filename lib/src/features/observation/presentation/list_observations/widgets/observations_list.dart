@@ -1,8 +1,8 @@
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
-import 'package:eldorado/src/features/observation/list_observations/widgets/observation_item_actions.dart';
-import 'package:eldorado/src/features/observation/list_observations/widgets/observation_item_body.dart';
-import 'package:eldorado/src/features/observation/list_observations/widgets/observation_item_header.dart';
+import 'package:eldorado/src/features/observation/presentation/list_observations/widgets/observation_item_actions.dart';
+import 'package:eldorado/src/features/observation/presentation/list_observations/widgets/observation_item_body.dart';
+import 'package:eldorado/src/features/observation/presentation/list_observations/widgets/observation_item_header.dart';
 import 'package:flutter/material.dart';
 
 class ObservationsList extends StatelessWidget {

@@ -2,8 +2,8 @@ import 'package:eldorado/src/common/default_background.dart';
 import 'package:eldorado/src/features/epc/presentation/register_epc_screen.dart';
 import 'package:eldorado/src/features/listing/listing_screen.dart';
 import 'package:eldorado/src/features/login/login_screen.dart';
-import 'package:eldorado/src/features/observation/add_observation/add_observation_screen.dart';
-import 'package:eldorado/src/features/observation/list_observations/list_observations_screen.dart';
+import 'package:eldorado/src/features/observation/presentation/add_observation/add_observation_screen.dart';
+import 'package:eldorado/src/features/observation/presentation/list_observations/list_observations_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {

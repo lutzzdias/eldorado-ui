@@ -4,7 +4,7 @@ import 'package:eldorado/src/common/elevated_icon_button.dart';
 import 'package:eldorado/src/common/header.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
-import 'package:eldorado/src/features/observation/list_observations/widgets/observations_list.dart';
+import 'package:eldorado/src/features/observation/presentation/list_observations/widgets/observations_list.dart';
 import 'package:flutter/material.dart';
 
 // TODO: Define Observation Object
