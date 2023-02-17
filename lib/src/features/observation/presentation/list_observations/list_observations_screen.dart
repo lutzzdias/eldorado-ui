@@ -16,23 +16,23 @@ class ListObservationsScreen extends StatelessWidget {
   List<Observation> observations = [
     Observation(
       requester: 'Julio César',
-      date: DateTime(2023, 02, 17),
-      content: 'Calmô gente, tem Julião pra todo mundo',
+      date: DateTime(2023, 02, 17, 17, 53),
+      content: 'Calmô gente, tem Julião pra todo mundo\na\na\na\na\na\nasdfsdf',
     ),
     Observation(
       requester: 'Thiago Lütz',
-      date: DateTime(2023, 01, 15),
+      date: DateTime(2023, 01, 15, 9, 5),
       content:
           'Bom dia apenas para aqueles que são merecedores de receber bom dia',
     ),
     Observation(
       requester: 'Víto Oliveira',
-      date: DateTime(2023, 02, 14),
+      date: DateTime(2023, 02, 14, 13, 15),
       content: 'Sou envolvido com o Julio...',
     ),
     Observation(
       requester: 'Julio César',
-      date: DateTime(2023, 02, 01),
+      date: DateTime(2023, 02, 01, 18),
       content: 'Isso pode gerar algumas complicações...',
     ),
   ];

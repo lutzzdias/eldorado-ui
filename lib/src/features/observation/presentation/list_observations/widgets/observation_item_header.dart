@@ -49,7 +49,7 @@ class ObservationItemHeader extends StatelessWidget {
               ),
             ),
             Text(
-              date.toString(),
+              '${date.day.toString()}/${date.month.toString()}/${date.year.toString()} às ${date.hour.toString().padLeft(2, '0')}:${date.minute.toString().padLeft(2, '0')}',
               style: const TextStyle(
                 color: CustomColors.darkGreen,
                 fontSize: 10,
