@@ -20,8 +20,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/':
-            return MaterialPageRoute(
-                builder: (_) => const ListObservationsScreen());
+            return MaterialPageRoute(builder: (_) => ListObservationsScreen());
           case '/base':
             return MaterialPageRoute(builder: (_) => DefaultBackground());
           case '/login':
@@ -31,8 +30,7 @@ class MyApp extends StatelessWidget {
           case '/register_epc':
             return MaterialPageRoute(builder: (_) => RegisterEpcScreen());
           case '/observation/list':
-            return MaterialPageRoute(
-                builder: (_) => const ListObservationsScreen());
+            return MaterialPageRoute(builder: (_) => ListObservationsScreen());
           case '/observation/add':
             return MaterialPageRoute(
                 builder: (_) => const AddObservationScreen());

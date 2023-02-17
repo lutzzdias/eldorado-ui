@@ -3,7 +3,12 @@ import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class ObservationItemBody extends StatelessWidget {
-  const ObservationItemBody({super.key});
+  final String text;
+
+  const ObservationItemBody({
+    super.key,
+    required this.text,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +32,7 @@ class ObservationItemBody extends StatelessWidget {
           readOnly: true,
           enabled: false,
           controller: TextEditingController(
-            text: 'Texto que virá no objeto observação',
+            text: text,
           ),
           keyboardType: TextInputType.multiline,
           maxLines: 6,

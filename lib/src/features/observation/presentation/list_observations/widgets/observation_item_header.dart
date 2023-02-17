@@ -3,8 +3,13 @@ import 'package:eldorado/src/constants/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class ObservationItemHeader extends StatelessWidget {
+  final String requester;
+  final DateTime date;
+
   const ObservationItemHeader({
     super.key,
+    required this.requester,
+    required this.date,
   });
 
   @override
@@ -13,8 +18,8 @@ class ObservationItemHeader extends StatelessWidget {
       children: [
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
+          children: [
+            const Text(
               'Solicitante:',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -23,8 +28,8 @@ class ObservationItemHeader extends StatelessWidget {
               ),
             ),
             Text(
-              'Vitor Oliveira Resende Brandao',
-              style: TextStyle(
+              requester,
+              style: const TextStyle(
                 color: CustomColors.darkGreen,
                 fontSize: 10,
               ),
@@ -34,8 +39,8 @@ class ObservationItemHeader extends StatelessWidget {
         gapW24,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text(
+          children: [
+            const Text(
               'Data:',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
@@ -44,8 +49,8 @@ class ObservationItemHeader extends StatelessWidget {
               ),
             ),
             Text(
-              '09/02/2023 às 9:42',
-              style: TextStyle(
+              date.toString(),
+              style: const TextStyle(
                 color: CustomColors.darkGreen,
                 fontSize: 10,
               ),

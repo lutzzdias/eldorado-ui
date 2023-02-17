@@ -4,13 +4,38 @@ import 'package:eldorado/src/common/elevated_icon_button.dart';
 import 'package:eldorado/src/common/header.dart';
 import 'package:eldorado/src/constants/app_sizes.dart';
 import 'package:eldorado/src/constants/custom_colors.dart';
+import 'package:eldorado/src/features/observation/domain/observation.dart';
 import 'package:eldorado/src/features/observation/presentation/list_observations/widgets/observations_list.dart';
 import 'package:flutter/material.dart';
 
 // TODO: Define Observation Object
 
 class ListObservationsScreen extends StatelessWidget {
-  const ListObservationsScreen({super.key});
+  ListObservationsScreen({super.key});
+
+  List<Observation> observations = [
+    Observation(
+      requester: 'Julio César',
+      date: DateTime(2023, 02, 17),
+      content: 'Calmô gente, tem Julião pra todo mundo',
+    ),
+    Observation(
+      requester: 'Thiago Lütz',
+      date: DateTime(2023, 01, 15),
+      content:
+          'Bom dia apenas para aqueles que são merecedores de receber bom dia',
+    ),
+    Observation(
+      requester: 'Víto Oliveira',
+      date: DateTime(2023, 02, 14),
+      content: 'Sou envolvido com o Julio...',
+    ),
+    Observation(
+      requester: 'Julio César',
+      date: DateTime(2023, 02, 01),
+      content: 'Isso pode gerar algumas complicações...',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +55,9 @@ class ListObservationsScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * .85,
                 ),
                 gapH12,
-                const ObservationsList(),
+                ObservationsList(
+                  observations: observations,
+                ),
                 gapH8,
                 // TODO: Should modularize the contents below into a widget??
                 SizedBox(
