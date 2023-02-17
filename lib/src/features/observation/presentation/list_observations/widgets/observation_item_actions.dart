@@ -1,4 +1,5 @@
 import 'package:eldorado/src/constants/custom_colors.dart';
+import 'package:eldorado/src/features/observation/presentation/list_observations/widgets/title_actions_dialog.dart';
 import 'package:flutter/material.dart';
 
 class ObservationItemActions extends StatelessWidget {
@@ -25,7 +26,17 @@ class ObservationItemActions extends StatelessWidget {
           child: IconButton(
             alignment: Alignment.topCenter,
             color: CustomColors.darkGreen,
-            onPressed: () => debugPrint('Clicked on reject observation $index'),
+            onPressed: () => showDialog(
+              context: context,
+              builder: (_) => TitleActionsDialog(
+                dialogTitle: 'Recusar observação?',
+                leadingButtonTitle: 'Voltar',
+                leadingButtonOnPressed: () => Navigator.of(context).pop(),
+                trailingButtonTitle: 'Recusar',
+                trailingButtonOnPressed: () =>
+                    debugPrint('clicked on reject observation'),
+              ),
+            ),
             icon: const Icon(Icons.close),
             iconSize: 25,
           ),
@@ -41,8 +52,17 @@ class ObservationItemActions extends StatelessWidget {
           ),
           child: IconButton(
             color: CustomColors.darkGreen,
-            onPressed: () =>
-                debugPrint('Clicked on approve observation $index'),
+            onPressed: () => showDialog(
+              context: context,
+              builder: (_) => TitleActionsDialog(
+                dialogTitle: 'Aprovar observação?',
+                leadingButtonTitle: 'Voltar',
+                leadingButtonOnPressed: () => Navigator.of(context).pop(),
+                trailingButtonTitle: 'Aprovar',
+                trailingButtonOnPressed: () =>
+                    debugPrint('clicked on approve observation'),
+              ),
+            ),
             icon: const Icon(Icons.check),
           ),
         ),

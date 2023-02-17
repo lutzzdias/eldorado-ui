@@ -17,7 +17,7 @@ class ListObservationsScreen extends StatelessWidget {
     Observation(
       requester: 'Julio César',
       date: DateTime(2023, 02, 17, 17, 53),
-      content: 'Calmô gente, tem Julião pra todo mundo\na\na\na\na\na\nasdfsdf',
+      content: 'Calmô gente, tem Julião pra todo mundo',
     ),
     Observation(
       requester: 'Thiago Lütz',
