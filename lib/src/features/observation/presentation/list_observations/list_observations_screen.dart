@@ -28,7 +28,7 @@ class ListObservationsScreen extends StatelessWidget {
     Observation(
       requester: 'Víto Oliveira',
       date: DateTime(2023, 02, 14, 13, 15),
-      content: 'Sou envolvido com o Julio...',
+      content: 'Observação deveras inteligente feita por mim.',
     ),
     Observation(
       requester: 'Julio César',
